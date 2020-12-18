@@ -1,0 +1,48 @@
+
+.logoFont{
+    font-size: 1.5rem;
+    font-weight: 500;
+    padding: 2%;
+}
+
+.card-img-top{
+    background-color: #DCDCDC;
+}
+
+/* .card-img-top:hover{
+    background-color: #838383
+} */
+
+.card-img-top.success{
+    background-color: #838383
+}
+/* .card-img-top.danger{
+    background-color: #f2f2da
+} */
+
+
+.card{
+    /* width: 225px; */
+}
+
+.card-title{
+    text-align: center;
+}
+
+
+.services-div{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    padding-top: 10%;
+}
+
+.cstm-btn{
+    border-radius: 0%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+.cstm-btn-for-payments{
+    border-radius: 0;
+}

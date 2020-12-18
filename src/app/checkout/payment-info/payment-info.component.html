@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Garage Plug Home</title>
+</head>
+
+<body>
+  <app-header></app-header>
+  <p class="logoFont" style="text-align: center;font-weight: 500;">SERVICE NUMBER</p>
+  <div class="container px-5 py-5">
+ 
+  <div class="row">
+    <p>Payment Successful</p>
+    <hr style="width:100%;text-align:left;margin-left:0;margin-top: 1%;">
+  </div>
+
+  <div class="row">
+    <span class="text-muted" style="font-size: 12px;">Please present the service number for the staff</span>
+      <p style="font-weight: 400;font-size: 1.5rem;">AW XXXX</p>
+  </div>
+
+  <div class="d-grid gap-2 col-4 mx-auto services-div">
+    <button type="button" class="btn btn-outline-dark cstm-btn" [routerLink]="['/payment']">MAKE PAYMENT</button>
+  </div>
+</div>
+</body>
+
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Garage Plug Home</title>
+</head>
+
+<body>
+  <app-header></app-header>
+  <p class="logoFont" style="text-align: center;font-weight: 500;">CHECKOUT</p>
+  <div class="container px-5 py-5">
+  <!-- <form>
+    <div class="row gx-5 py-2">
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="firstName">First Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+        />
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="lastName">Last Name</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+        />
+      </div>
+    </div>
+
+    <div class="row gx-5 py-2">
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="firstName">Email</label>
+        <input
+          type="text"
+          class="form-control"
+          id="firstName"
+        />
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="lastName">Mobile</label>
+        <input
+          type="text"
+          class="form-control"
+          id="lastName"
+        />
+      </div>
+    </div>
+
+  
+    <div class="row gx-5 py-2">
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="firstName">Service Date and Time</label>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-2">
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+          <option selected>Hours</option>
+          <option value="1">1</option>
+          <option value="2">2</option>
+          <option value="3">3</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+          <option selected>Date</option>
+          <option value="1">18</option>
+          <option value="2">19</option>
+          <option value="3">20</option>
+        </select>
+      </div>
+      <div class="col-2">
+        <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+          <option selected>Month</option>
+          <option value="1">Oct</option>
+          <option value="2">Nov</option>
+          <option value="3">Dec</option>
+        </select>
+      </div>
+    </div>
+
+    <hr style="width:100%;text-align:left;margin-left:0">
+
+    <div class="row">
+      <label for="firstName">Select Payment Method</label>
+      <div class="d-grid gap-2 d-md-flex justify-content-md-start py-2">
+        <button class="btn btn-outline-dark me-md-2 cstm-btn-for-payments" type="button">CASH</button>
+        <button class="btn btn-secondary cstm-btn-for-payments" type="button">CREDIT/DEBIT CARD</button>
+      </div>
+    </div>
+
+    <div class="row gx-5 py-2">
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="firstName" class="pb-2">Credit/Debit Card</label>
+        <input
+          type="text"
+          class="form-control py-2"
+          id="firstName"
+        />
+      </div>
+      <div class="form-group col-md-6 col-sm-12">
+        <label for="lastName">Expiry Date</label>
+        <div class="row pt-3">
+          <div class="col-3">
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+              <option selected>Date</option>
+              <option value="1">1</option>
+              <option value="2">2</option>
+              <option value="3">3</option>
+            </select>
+          </div>
+          <div class="col-3">
+            <select class="form-select form-select-sm mb-3" aria-label=".form-select-sm example">
+              <option selected>Month</option>
+              <option value="1">18</option>
+              <option value="2">19</option>
+              <option value="3">20</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row col-2 d-md-flex justify-content-md-start px-2">
+      <input
+        type="text"
+        class="form-control"
+        id="firstName"
+        placeholder="CVV"
+      />
+      </div>
+
+  </form> -->
+  <div class="container py-3 px-5" *ngIf="!customerCheckOutDetails">
+    <p class="text-center">Please go back to services and select again. <a [routerLink]="['/services']"> Go to services </a></p>
+  </div>
+ 
+  <div *ngIf="customerCheckOutDetails">
+  <div class="row">
+    <p>Service Details</p>
+    <p>Date of Service: {{customerCheckOutDetails.selectedDate}}</p>
+    <p>No. Of hrs serviced: {{customerCheckOutDetails.selectedHrs}}</p>
+    <p>Month of Service: {{customerCheckOutDetails.selectedMonth}}</p>
+    <hr style="width:100%;text-align:left;margin-left:0;margin-top: 1%;">
+
+    <p>Customer Details</p>
+    <p>Name: {{customerCheckOutDetails.fName}} {{customerCheckOutDetails.lName}}</p>
+    <p>Mobile No: {{customerCheckOutDetails.mobNo}}</p>
+    <p>Email: {{customerCheckOutDetails.email}}</p>
+    <hr style="width:100%;text-align:left;margin-left:0;margin-top: 1%;">
+
+    <p>Price Details</p>
+    <p>Payment Method: {{customerCheckOutDetails.paymentMethod}}</p>
+    <hr style="width:100%;text-align:left;margin-left:0;margin-top: 1%;">
+  </div>
+
+  <div class="row">
+    <div class="col-6">
+      <p style="font-weight: 400;font-size: 1.5rem;">TOTAL PRICE</p>
+    </div>
+    <div class="col-6">
+      <p style="text-align:right;font-weight: 600;font-size: 1.5rem;">{{totalAmount}} ₹</p>
+    </div>
+  </div>
+
+  <div class="d-grid gap-2 col-4 mx-auto services-div">
+    <button type="button" class="btn btn-outline-dark cstm-btn" [routerLink]="['/payment']">MAKE PAYMENT</button>
+  </div>
+  </div>
+</div>
+</body>
+
+</html>

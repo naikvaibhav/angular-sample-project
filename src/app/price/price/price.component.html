@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Garage Plug Home</title>
+</head>
+
+<body>
+  <app-header></app-header>
+  <p class="logoFont" style="text-align: center;font-weight: 500;">PRICE</p>
+
+  <div class="container py-3 px-5" *ngIf="!showData">
+    <p class="text-center">Please go back to services and select again. <a [routerLink]="['/services']"> Go to services </a></p>
+  </div>
+  <div class="container py-3 px-5" *ngIf="selectedServices?.length > 0 && selectedCarSize?.length > 0">
+  <p class="logoFont" style="text-align: left;font-weight: 400;">Selected Services</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let car of selectedServices; let i = index">
+        <div class="card h-54 w-30" (click)="clickEvent(car, i)">
+          <img [src]="car.img" class="card-img-top" alt="..." id="{{ 'card' + i }}" [ngClass]="car.selected ? 'success' : 'danger'">
+          <div class="card-body">
+            <h5 class="card-title">{{car.serviceTitle}}</h5>
+          </div>
+        </div>
+      </div>
+      <div class="col d-flex align-items-center px-3">
+        <button type="button" class="btn btn-outline-dark cstm-btn" [routerLink]="['/services']">CHANGE</button>
+      </div>
+    </div>
+
+    <p class="logoFont" style="text-align: left;font-weight: 400;">Car Size</p>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let car of selectedCarSize; let i = index">
+        <div class="card h-54 w-30" (click)="clickEvent(car, i)">
+          <img [src]="car.img" class="card-img-top" alt="..." id="{{ 'card' + i }}" [ngClass]="car.selected ? 'success' : 'danger'">
+          <div class="card-body">
+            <h5 class="card-title">{{car.serviceTitle}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <hr style="width:100%;text-align:left;margin-left:0">
+    <div class="row">
+      <div class="col-6">
+        <p style="font-weight: 400;font-size: 1.5rem;">TOTAL PRICE</p>
+      </div>
+      <div class="col-6">
+        <p style="text-align:right;font-weight: 600;font-size: 1.5rem;">{{totalPrice}} ₹</p>
+      </div>
+    </div>
+    
+    <div class="d-grid gap-2 col-4 mx-auto services-div">
+      <button type="button" class="btn btn-outline-dark cstm-btn" [routerLink]="['/contact']">CONTINUE</button>
+    </div>
+  </div>
+</body>
+
+</html>

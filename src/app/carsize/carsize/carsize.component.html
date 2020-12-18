@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+  <title>Garage Plug Home</title>
+</head>
+
+<body>
+  <app-header></app-header>
+  <p class="logoFont" style="text-align: center;font-weight: 500;">CAR SIZE</p>
+  <div class="container py-3 px-5">
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+      <div class="col" *ngFor="let car of setOfCarSize; let i = index">
+        <div class="card h-54 w-30" (click)="clickEvent(car, i)">
+          <img [src]="car.img" class="card-img-top" alt="..." id="{{ 'card' + i }}" [ngClass]="car.selected ? 'success' : 'danger'">
+          <div class="card-body">
+            <h5 class="card-title">{{car.serviceTitle}}</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+
+    <div class="d-grid gap-2 col-4 mx-auto services-div">
+      <button type="button" class="btn btn-outline-dark cstm-btn" [routerLink]="['/price']">CONTINUE</button>
+    </div>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,40 @@
+.divForLogo{
+    /* background-color: #ffffd8; */
+    background-color: #f2f2da;
+    min-height: 55vh;
+}
+
+.imgDimension{
+    height: 100px;
+    width: 100px;
+    position: relative;
+    margin: 2%;
+    /* background-color: #ffffd8; */
+    background-color:  #f2f2da;
+}
+
+.services-div{
+    /* display: flex;
+    align-items: center;
+    justify-content: center; */
+    padding-top: 10%;
+}
+
+.divForLogo{
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    margin: 0;
+}
+
+.cstm-btn{
+    border-radius: 0%;
+    padding-top: 4%;
+    padding-bottom: 4%;
+}
+
+
+.subHeading{
+    font-style: italic;
+    font-weight: 200;
+}
