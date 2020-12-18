@@ -1,5 +1,4 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { initDomAdapter } from '@angular/platform-browser/src/browser';
 import {CentralInfoService} from "../../shared/central-info.service"
 // import { EventEmitter } from 'protractor';
 const imagePath = "../../../assets/carsize"
